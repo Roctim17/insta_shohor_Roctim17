@@ -119,9 +119,10 @@ const createPost = (post) => {
                   <div class="post__description">
                     <small>
                       <a class="post__name--underline" href="#">
-                          ${post.comments?.user}
+                          ${post.comments.user}
+   
                       </a>
-                      ${post.comments?.text}
+                      ${post.comments.text}
                     </small>
                   </div>
                   <span class="post__date-time">30 minutes ago</span>
@@ -151,7 +152,7 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
   const reportedPosts = getReportedPosts();
-  posts.forEach((post) => {
+  reportedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
   });
