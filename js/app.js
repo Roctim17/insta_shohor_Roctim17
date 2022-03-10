@@ -16,7 +16,7 @@ const isLiked = (id) => {
 };
 
 const addToLiked = (id) => {
-  likedPostsId.plus(id);
+  likedPostsId.push(id);
   showPosts(posts);
 };
 
@@ -100,7 +100,6 @@ const createPost = (post) => {
                     <i class="fa-solid fa-ban"></i>
                   </button>
                 </div>
-
                 <div class="post__content">${displayContent(post.description)}</div>
 
                 <div class="post__infos">
