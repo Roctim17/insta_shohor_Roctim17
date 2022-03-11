@@ -123,9 +123,9 @@ const createPost = (post) => {
                   <div class="post__description">
                     <small>
                       <a class="post__name--underline" href="#">
-                          ${post.comments["user"]}
+                          ${post.comments.map(comment => comment.user)} 
                       </a>
-                      ${comment}
+                      ${post.comments.map(comment => comment.text)}
                     </small>
                   </div>
                   <span class="post__date-time">30 minutes ago</span>
@@ -147,6 +147,7 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
+
   const likedPosts = getLikedPosts();
   likedPosts.forEach((post) => {
     const div = createPost(post);
